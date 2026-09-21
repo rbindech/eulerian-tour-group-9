@@ -1,4 +1,4 @@
- # import sys ( for the 
+ # import sys ( for the CSES test validation)
 
 def main():
     # Read all tokens from standard input
