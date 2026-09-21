@@ -1,4 +1,5 @@
  # import sys ( for the CSES test validation)
+from graph_network import nodes, edges
 
 def main():
     # Read all tokens from standard input
