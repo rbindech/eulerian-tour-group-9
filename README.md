@@ -203,8 +203,6 @@ OpenAI ChatGPT/Codex was used during this project to:
 - assist with the design, commenting, testing, and debugging of the Tucker implementation; and
 - help draft and organize this README.
 
-The generated explanations and code must be reviewed and understood by the group before submission. The relevant AI prompt history should be included with the submission as required by the course instructions.
-
 ## References
 
 - Course material: *Graph Traversal 1 - Eulerian Tour, Graph Theory Week 3*
