@@ -7,7 +7,7 @@
 | Name | Student ID |
 | --- | --- |
 | Rida Bindech | 5999261011 |
-| [Member 2] | [Student ID] |
+| Emmanuel Santini | 5999261124 |
 | [Member 3] | [Student ID] |
 
 ## Project Overview
