@@ -69,7 +69,6 @@ Here, `alpha` is the inverse Ackermann function and grows so slowly that the imp
 
 ```text
 .
-|-- graph_network.py       # Shared nodes and edges
 |-- input.txt                #Input for sample run
 |-- fleury_algorithm.py              # Fleury's algorithm
 |-- hierholzer_algorithm.py          # Hierholzer's algorithm
