@@ -98,24 +98,19 @@ python --version
 
 ## Input Format
 
-The three algorithms use the same graph defined in `graph_network.py`:
+The algorithms read the graph input directly from `input.txt` using the standard **CSES Mail Delivery** format.
 
-
-
-Each tuple `(u, v)` represents one undirected edge between vertices `u` and `v`. The graph is not weighted. The algorithms work on their own internal structures and do not modify the shared `nodes` and `edges` lists.
-
-The equivalent CSES input is:
+- **First line:** Two space-separated integers $n$ (number of vertices) and $m$ (number of edges).
+- **Next $m$ lines:** Two space-separated integers $u$ and $v$, representing an undirected edge between vertex $u$ and vertex $v$.:
 
 ```text
-6 8
+5 6
 1 2
-1 3
 2 3
-2 4
-2 6
-3 5
-3 6
+3 1
+1 4
 4 5
+5 1
 ```
 
 ## How to Run
