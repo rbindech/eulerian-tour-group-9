@@ -5,7 +5,7 @@ from tucker_algorithm import run_tucker
 
 def main():
     run_fleury()
-    #run_hierholzer()
+    run_hierholzer()
     run_tucker()
 
 
