@@ -8,7 +8,6 @@ def run_hierholzer():
             input_data = f.read().split()
     #to read the input given by the CSES      
     except FileNotFoundError:
-        # Fallback si le fichier n'existe pas (ex: sur la plateforme de test CSES)
         input_data = sys.stdin.read().split()
 
     if not input_data:
@@ -54,7 +53,7 @@ def run_hierholzer():
             adj[u].pop()
             
         if adj[u]:
-            # Traverse to the next node via an unvisited edge
+            # Cross to the next node via an unvisited edge
             v, edge_id = adj[u].pop()
             used_edge[edge_id] = True
             curr_path.append(v)
