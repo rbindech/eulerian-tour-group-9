@@ -1,9 +1,18 @@
 """Tucker's algorithm for an undirected Eulerian circuit.
 
-The first element of ``nodes`` is considered the starting vertex.
+The graph is read from input.txt using the CSES Mail Delivery format:
+
+    number_of_nodes number_of_edges
+    first_endpoint second_endpoint
+    ...
+
+Vertex 1 is the starting vertex (the post office).
 """
 
-from graph_network import nodes, edges
+from pathlib import Path
+
+
+INPUT_FILE = Path(__file__).with_name("input.txt")
 
 
 class DisjointSet:
@@ -196,38 +205,76 @@ def build_tucker_circuit(number_of_nodes, indexed_edges):
     return route
 
 
+def read_graph():
+    """Read and validate the graph stored in input.txt.
+
+    The returned edge endpoints use zero-based indices internally.
+    """
+
+    if not INPUT_FILE.exists():
+        raise FileNotFoundError(
+            f"Input file not found: {INPUT_FILE}"
+        )
+
+    values = INPUT_FILE.read_text(encoding="utf-8").split()
+
+    if len(values) < 2:
+        raise ValueError(
+            "input.txt must begin with the number of nodes and edges."
+        )
+
+    try:
+        numbers = [int(value) for value in values]
+    except ValueError as error:
+        raise ValueError("input.txt must contain integers only.") from error
+
+    number_of_nodes = numbers[0]
+    number_of_edges = numbers[1]
+
+    if number_of_nodes <= 0 or number_of_edges < 0:
+        raise ValueError(
+            "The number of nodes must be positive and the number of edges "
+            "cannot be negative."
+        )
+
+    expected_value_count = 2 + 2 * number_of_edges
+
+    if len(numbers) != expected_value_count:
+        raise ValueError(
+            f"input.txt declares {number_of_edges} edges, but its content "
+            "does not contain exactly that many endpoint pairs."
+        )
+
+    indexed_edges = []
+
+    for index in range(2, expected_value_count, 2):
+        first = numbers[index]
+        second = numbers[index + 1]
+
+        if not (1 <= first <= number_of_nodes):
+            raise ValueError(
+                f"Vertex {first} is outside the range 1..{number_of_nodes}."
+            )
+
+        if not (1 <= second <= number_of_nodes):
+            raise ValueError(
+                f"Vertex {second} is outside the range 1..{number_of_nodes}."
+            )
+
+        indexed_edges.append((first - 1, second - 1))
+
+    return number_of_nodes, indexed_edges
+
+
 def run_tucker():
-    """Run Tucker's algorithm on the graph imported from graph_network."""
+    """Run Tucker's algorithm on the graph stored in input.txt."""
 
     print("\n--- Tucker's Algorithm ---")
 
-    if not nodes:
-        print("IMPOSSIBLE: the graph contains no starting node.")
-        return None
-
-    if len(set(nodes)) != len(nodes):
-        raise ValueError("The nodes list must not contain duplicates.")
-
-    # The first element of nodes is the common starting node (post office).
-    start_node = nodes[0]
-    ordered_nodes = [start_node] + [node for node in nodes if node != start_node]
-    node_to_index = {
-        node: index
-        for index, node in enumerate(ordered_nodes)
-    }
-
-    try:
-        indexed_edges = [
-            (node_to_index[first], node_to_index[second])
-            for first, second in edges
-        ]
-    except KeyError as error:
-        raise ValueError(
-            f"Edge endpoint {error.args[0]!r} is missing from nodes."
-        ) from error
+    number_of_nodes, indexed_edges = read_graph()
 
     indexed_route = build_tucker_circuit(
-        len(ordered_nodes),
+        number_of_nodes,
         indexed_edges,
     )
 
@@ -235,7 +282,8 @@ def run_tucker():
         print("IMPOSSIBLE: the graph has no Eulerian circuit.")
         return None
 
-    route = [ordered_nodes[index] for index in indexed_route]
+    # Convert internal zero-based indices back to the labels from input.txt.
+    route = [index + 1 for index in indexed_route]
 
     print("Eulerian circuit:")
     print(" -> ".join(map(str, route)))

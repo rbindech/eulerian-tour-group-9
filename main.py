@@ -1,5 +1,5 @@
 from fleury_algorithm import run_fleury
-from hierholzer_algorithm import run_hierholzer
+#from hierholzer_algorithm import run_hierholzer
 from tucker_algorithm import run_tucker
 
 

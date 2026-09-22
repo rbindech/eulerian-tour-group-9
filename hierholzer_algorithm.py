@@ -1,4 +1,4 @@
- import sys 
+""" import sys 
  
 def main():
     # Read all tokens from standard input
@@ -73,3 +73,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+"""
