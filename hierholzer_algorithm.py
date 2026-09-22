@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 """ import sys 
+=======
+import sys 
+>>>>>>> ed5969fe931a0bacc06c975489696ac06d858bd8
  
-def main():
+def run_hierholzer():
     # Read all tokens from standard input
     try:
         with open("input.txt", "r") as f:
@@ -69,8 +73,14 @@ def main():
     # The circuit was constructed backwards so we reverse  it to get the correct path
     eulerian_circuit = circuit[::-1]
     
+    print("--- Hierholzer's algorithm ---")
+    print("Eulerian circuit:")
     print(*eulerian_circuit)
 
+<<<<<<< HEAD
 if __name__ == '__main__':
     main()
 """
+=======
+
+>>>>>>> ed5969fe931a0bacc06c975489696ac06d858bd8
