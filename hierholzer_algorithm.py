@@ -2,7 +2,13 @@
  
 def main():
     # Read all tokens from standard input
-    input_data = sys.stdin.read().split()
+    try:
+        with open("input.txt", "r") as f:
+            input_data = f.read().split()
+    except FileNotFoundError:
+        # Fallback si le fichier n'existe pas (ex: sur la plateforme de test CSES)
+        input_data = sys.stdin.read().split()
+
     if not input_data:
         return
     #makes the data into int
