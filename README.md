@@ -98,10 +98,10 @@ python --version
 
 ## Input Format
 
-The algorithms read the graph input directly from `input.txt` using the standard **CSES Mail Delivery** format.
+The algorithms read the graph input directly from `input.txt` using the standard CSES Mail Delivery format.
 
-- **First line:** Two space-separated integers $n$ (number of vertices) and $m$ (number of edges).
-- **Next $m$ lines:** Two space-separated integers $u$ and $v$, representing an undirected edge between vertex $u$ and vertex $v$.:
+- First line: Two space-separated integers $n$ (number of vertices) and $m$ (number of edges).
+- Next $m$ lines: Two space-separated integers $u$ and $v$, representing an undirected edge between vertex $u$ and vertex $v$.:
 
 ```text
 5 6
