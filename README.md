@@ -8,7 +8,7 @@
 | --- | --- |
 | Rida Bindech | 5999261011 |
 | Emmanuel Santini | 5999261124 |
-| [Member 3] | [Student ID] |
+| Calixte Berthier | 5999261123 |
 
 ## Project Overview
 
