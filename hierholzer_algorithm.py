@@ -1,10 +1,12 @@
+
 import sys 
  
 def run_hierholzer():
-    # Read all tokens from standard input
+    #to read the sample input given in the GitHub repository
     try:
         with open("input.txt", "r") as f:
             input_data = f.read().split()
+    #to read the input given by the CSES      
     except FileNotFoundError:
         # Fallback si le fichier n'existe pas (ex: sur la plateforme de test CSES)
         input_data = sys.stdin.read().split()
