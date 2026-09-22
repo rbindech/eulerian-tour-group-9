@@ -85,7 +85,7 @@ Hierholzer's algorithm is the best choice for this problem in most practical sit
 |-- tucker_algorithm.py     # Tucker's algorithm
 |-- main.py                # Runs all three algorithms
 |-- README.md
-`-- report.pdf           # Step-by-step analysis and comparison
+|-- report.pdf           # Step-by-step analysis and comparison
 ```
 
 ## Prerequisites
