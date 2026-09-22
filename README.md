@@ -79,6 +79,7 @@ Hierholzer's algorithm is the best choice for this problem in most practical sit
 ```text
 .
 |-- graph_network.py       # Shared nodes and edges
+|-- input.txt                #Input for sample run
 |-- fleury_algorithm.py              # Fleury's algorithm
 |-- hierholzer_algorithm.py          # Hierholzer's algorithm
 |-- tucker_algorithm.py     # Tucker's algorithm
