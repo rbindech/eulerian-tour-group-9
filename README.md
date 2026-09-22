@@ -64,15 +64,6 @@ When two different circuits pass through the same original vertex, Tucker's algo
 
 Here, `alpha` is the inverse Ackermann function and grows so slowly that the implementation is practically linear.
 
-## Complexity Comparison
-
-| Algorithm | Main strategy | Time complexity | Space complexity |
-| --- | --- | ---: | ---: |
-| Fleury | Avoid bridges while constructing the route | `O(E^2)` | `O(V + E)` |
-| Hierholzer | Construct and splice circuits | `O(V + E)` | `O(V + E)` |
-| Tucker | Pair edges and merge circuits using DSU | `O(V + E * alpha(E))` | `O(V + E)` |
-
-Hierholzer's algorithm is the best choice for this problem in most practical situations. It has optimal linear time complexity and is simpler to implement than Tucker's algorithm. Tucker's algorithm is also practically linear, but it requires additional structures for half-edges, pairings, and circuit merging. Fleury's algorithm is intuitive, but its repeated bridge tests make it the least efficient of the three.
 
 ## Project Structure
 
@@ -109,20 +100,7 @@ python --version
 
 The three algorithms use the same graph defined in `graph_network.py`:
 
-```python
-nodes = [1, 2, 3, 4, 5, 6]
 
-edges = [
-    (1, 2),
-    (1, 3),
-    (2, 3),
-    (2, 4),
-    (2, 6),
-    (3, 5),
-    (3, 6),
-    (4, 5),
-]
-```
 
 Each tuple `(u, v)` represents one undirected edge between vertices `u` and `v`. The graph is not weighted. The algorithms work on their own internal structures and do not modify the shared `nodes` and `edges` lists.
 
