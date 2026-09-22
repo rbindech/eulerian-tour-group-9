@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-""" import sys 
-=======
 import sys 
->>>>>>> ed5969fe931a0bacc06c975489696ac06d858bd8
  
 def run_hierholzer():
     # Read all tokens from standard input
@@ -77,10 +73,3 @@ def run_hierholzer():
     print("Eulerian circuit:")
     print(*eulerian_circuit)
 
-<<<<<<< HEAD
-if __name__ == '__main__':
-    main()
-"""
-=======
-
->>>>>>> ed5969fe931a0bacc06c975489696ac06d858bd8
