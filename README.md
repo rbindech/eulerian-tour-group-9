@@ -149,9 +149,9 @@ if __name__ == "__main__":
 One possible execution on the sample graph is:
 
 ```text
---- Fleury's Algorithm ---
+--- Fleury's algorithm ---
 Eulerian circuit:
-1 -> 2 -> 4 -> 5 -> 3 -> 2 -> 6 -> 3 -> 1
+1 2 3 1 4 5 1
 
 --- Hierholzer's Algorithm ---
 Eulerian circuit:
